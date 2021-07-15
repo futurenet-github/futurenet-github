@@ -1,4 +1,4 @@
-doo Server Error
+Odoo Server Error
 Traceback (most recent call last):
   File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 332, in _compiled_fn
     return compiled(self, append, new, options, log)
