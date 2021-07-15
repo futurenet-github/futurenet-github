@@ -1,0 +1,69 @@
+doo Server Error
+Traceback (most recent call last):
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 332, in _compiled_fn
+    return compiled(self, append, new, options, log)
+  File "<template>", line 1, in template_mm_onscreen_report_gst_invoice_template_gst_report_out_invoice_3058
+  File "<template>", line 2, in body_call_content_3056
+  File "<template>", line 3, in body_call_content_3054
+  File "<template>", line 4, in foreach_3053
+  File "<template>", line 136, in foreach_3040
+KeyError: 'hsn'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/odoo-13/odoo/addons/web/controllers/main.py", line 2016, in report_download
+    response = self.report_routes(reportname, docids=docids, converter=converter, context=context)
+  File "/home/ubuntu/odoo-13/odoo/http.py", line 510, in response_wrap
+    response = f(*args, **kw)
+  File "/home/ubuntu/odoo-13/odoo/addons/report_xlsx/controllers/main.py", line 49, in report_routes
+    reportname, docids, converter, **data
+  File "/home/ubuntu/odoo-13/odoo/http.py", line 510, in response_wrap
+    response = f(*args, **kw)
+  File "/home/ubuntu/odoo-13/odoo/addons/web/controllers/main.py", line 1954, in report_routes
+    pdf = report.with_context(context).render_qweb_pdf(docids, data=data)[0]
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/ir_actions_report.py", line 718, in render_qweb_pdf
+    html = self.with_context(context).render_qweb_html(res_ids, data=data)[0]
+  File "/home/ubuntu/odoo-13/odoo/addons/web_studio/models/ir_actions_report.py", line 18, in render_qweb_html
+    return super(IrActionsReport, self).render_qweb_html(docids, data)
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/ir_actions_report.py", line 758, in render_qweb_html
+    return self.render_template(self.report_name, data), 'html'
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/ir_actions_report.py", line 541, in render_template
+    return view_obj.render_template(template, values)
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/ir_ui_view.py", line 1154, in render_template
+    return self.browse(self.get_view_id(template)).render(values, engine)
+  File "/home/ubuntu/odoo-13/odoo/addons/web_editor/models/ir_ui_view.py", line 25, in render
+    return super(IrUiView, self).render(values=values, engine=engine, minimal_qcontext=minimal_qcontext)
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/ir_ui_view.py", line 1162, in render
+    return self.env[engine].render(self.id, qcontext)
+  File "/home/ubuntu/odoo-13/odoo/addons/web_studio/models/ir_qweb.py", line 43, in render
+    return super(IrQWeb, self).render(template, values=values, **options)
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/ir_qweb.py", line 58, in render
+    result = super(IrQWeb, self).render(id_or_xml_id, values=values, **context)
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 260, in render
+    self.compile(template, options)(self, body.append, values or {})
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 334, in _compiled_fn
+    raise e
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 332, in _compiled_fn
+    return compiled(self, append, new, options, log)
+  File "<template>", line 1, in template_mm_onscreen_report_gst_move_template_report_2983
+  File "<template>", line 2, in body_call_content_2981
+  File "<template>", line 3, in foreach_2980
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 339, in _compiled_fn
+    raise QWebException("Error to render compiling AST", e, path, node and etree.tostring(node[0], encoding='unicode'), name)
+odoo.addons.base.models.qweb.QWebException: 'hsn'
+Traceback (most recent call last):
+  File "/home/ubuntu/odoo-13/odoo/addons/base/models/qweb.py", line 332, in _compiled_fn
+    return compiled(self, append, new, options, log)
+  File "<template>", line 1, in template_mm_onscreen_report_gst_invoice_template_gst_report_out_invoice_3058
+  File "<template>", line 2, in body_call_content_3056
+  File "<template>", line 3, in body_call_content_3054
+  File "<template>", line 4, in foreach_3053
+  File "<template>", line 136, in foreach_3040
+KeyError: 'hsn'
+
+Error to render compiling AST
+KeyError: 'hsn'
+Template: mm_onscreen_report.gst_invoice_template_gst_report_out_invoice
+Path: /t/t/t/t/table[5]/tr[3]/td[1]/span
+Node: <span t-esc="doc['hsn']"/>
